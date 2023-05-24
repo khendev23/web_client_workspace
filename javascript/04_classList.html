@@ -76,6 +76,19 @@
         }
     </script>
 
+    <div id="target">Hello World</div>
+    <button onclick="target.classList.add('on');">add</button>
+    <button onclick="target.classList.remove('on');">remove</button>
+    <button onclick="target.classList.toggle('on');">toggle</button>
+    <button onclick="test1();">contains</button>
+    <script>
+        function test1() {
+            const result = target.classList.contains('on');
+            console.log(result);
+
+            alert(result? '#target.on' : '#target');
+        }
+    </script>
 
 
 </body>

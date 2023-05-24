@@ -71,5 +71,38 @@
         }
     </script>
 	<div id="result"></div>
+	<!-- 쌤 답
+		<script type="text/javascript">
+		function showVal(){
+			const productLevelVal = document.getElementById("productLevel").value;
+			document.getElementById("pVal").innerHTML = productLevelVal;
+		}
+
+		function printProduct(){
+			const result = document.getElementById("result");
+		
+			const productNameVal = document.getElementById("productName").value;
+			const productLevelVal = document.getElementById("productLevel").value;
+			const productAmountVal = document.getElementById("productAmount").value;
+			const messageVal = document.getElementById("message").value;
+
+			const txt = `상품명 : ${productNameVal}
+납품등급 : ${productLevelVal}
+납품수량 : ${productAmountVal}
+기타사항 : ${messageVal}
+입력하신 내용이 맞습니까?`;
+			const bool = confirm(txt);
+		
+			if(bool){
+				result.innerHTML += "상품명 : " + productNameVal + "<br>";
+				result.innerHTML += "납품등급 : " + productLevelVal + "<br>";
+				result.innerHTML += "납품수량 : " + productAmountVal + "<br>";
+				result.innerHTML += "기타사항 : " + messageVal + "<br>";
+			}
+			// 입력하면 계속 누적된다.
+			// 만약 기존것을 지우고 싶으면 맨 위 result.innerHTML +=을 =로 바꿔주면 된다.
+		}
+		</script>
+	-->
 </body>
 </html>
