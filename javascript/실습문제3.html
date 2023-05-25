@@ -22,9 +22,9 @@
 	<h2>@실습문제3</h2>
 	<fieldset>
 		<legend>검색할 항목을 선택하세요.</legend>
-		<input type="radio" name="category" value="title" onclick="showDiv();" id="title"><label for="title">제목</label>&nbsp; &nbsp; 
-		<input type="radio" name="category" value="date" onclick="showDiv();"  id="date"><label for="date">날짜</label>&nbsp; &nbsp; 
-		<input type="radio" name="category" value="writer" onclick="showDiv();" id="writer"><label for="writer">작성자</label>&nbsp; &nbsp;
+		<input type="radio" name="category" value="title" onclick="showDiv(this);" id="title"><label for="title">제목</label>&nbsp; &nbsp; 
+		<input type="radio" name="category" value="date" onclick="showDiv(this);"  id="date"><label for="date">날짜</label>&nbsp; &nbsp; 
+		<input type="radio" name="category" value="writer" onclick="showDiv(this);" id="writer"><label for="writer">작성자</label>&nbsp; &nbsp;
 	</fieldset>
 	<hr>
 	<div id="titleBox" class="box">
@@ -61,26 +61,40 @@
 	 * - 작성자 체크시, writerBox 만 보여지게 함
 	 */
     
-    function showDiv(){
-        const category = document.querySelector('[name="category"]:checked').value;
-        const titleBox = document.getElementById("titleBox");
-        const dateBox = document.getElementById("dateBox");
-        const writerBox = document.getElementById("writerBox");
+	// 내 코드
+    // function showDiv(){
+    //     const category = document.querySelector('[name="category"]:checked').value;
+    //     const titleBox = document.getElementById("titleBox");
+    //     const dateBox = document.getElementById("dateBox");
+    //     const writerBox = document.getElementById("writerBox");
 
-        if (category == "title") {
-            titleBox.style.display = "block";
-            dateBox.style.display = "none";
-            writerBox.style.display = "none";
-        } else if (category == "date") {
-            titleBox.style.display = "none";
-            dateBox.style.display = "block";
-            writerBox.style.display = "none";
-        } else if (category == "writer") {
-            titleBox.style.display = "none";
-            dateBox.style.display = "none";
-            writerBox.style.display = "block";
-        }
-	}
+    //     if (category == "title") {
+    //         titleBox.style.display = "block";
+    //         dateBox.style.display = "none";
+    //         writerBox.style.display = "none";
+    //     } else if (category == "date") {
+    //         titleBox.style.display = "none";
+    //         dateBox.style.display = "block";
+    //         writerBox.style.display = "none";
+    //     } else if (category == "writer") {
+    //         titleBox.style.display = "none";
+    //         dateBox.style.display = "none";
+    //         writerBox.style.display = "block";
+    //     }
+	// }
+	function showDiv(element){
+		const checkedCategory = element.value;
+		
+		//모두 안보이게 하기
+		const boxes = document.querySelectorAll(".box");
+		for(let i = 0; i < boxes.length; i++){
+			boxes[i].style.display = "none";
+		}
+		
+		//특정요소만 보이게 하기
+		document.getElementById(checkedCategory + "Box").style.display = "block";
+
+	}	
     
     </script>
 </body>
