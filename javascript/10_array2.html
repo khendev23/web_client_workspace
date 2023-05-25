@@ -192,12 +192,38 @@
         <tbody></tbody>
     </table>
     <script>
-        functionsortContactByAge(type) {
+        /**
+         * 나이 정렬
+         */
+        function sortContactByAge(type) {
             const trs = Array.from(document.querySelectorAll('#contact tbody tr'));
 
             let compareFunction;
 
-            
+            if(type == 'asc') {
+                // 나이 오름차순
+                compareFunction = function(tr1, tr2) {
+                    const age1 = tr1.querySelector("td:nth-child(2)").innerText;
+                    const age2 = tr2.querySelector("td:nth-child(2)").innerText;
+                    
+                    return age1-age2;
+                };
+            } else {
+                // 나이 내림차순
+                compareFunction = function(tr1, tr2) {
+                    const age1 = tr1.querySelector("td:nth-child(2)").innerText;
+                    const age2 = tr2.querySelector("td:nth-child(2)").innerText;
+                    
+                    return age2-age1;
+                };
+            }
+            trs.sort(compareFunction);
+
+            // DOM tree 구조
+            trs.forEach(function(tr) {
+                document.querySelector("table#contact tbody").append(tr);
+            });
+
         }
 
         function sortContactByName(type) {
@@ -281,6 +307,7 @@
 
             arr.forEach(function(text) {
                 const infos = text.split(',');
+                console.log(infos);
                 const name = infos[0];
                 const age = infos[1];
                 const tel = infos[2];
