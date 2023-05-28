@@ -18,6 +18,7 @@
          * - 자유변수를 포함한 함수
          */
         const test2 = () => {
+<<<<<<< HEAD
             function foo(){
             const num = 100;
             return () =>{
@@ -36,14 +37,37 @@
          * - 함수 지역범위 밖에 선언된 변수
          */
         const say2 = "돈 좀 있니?";
+=======
+            function foo() {
+                const num = 100;
+                return () => {
+            console.log(`num = ${num}`);
+            };
+        }
+        const num = 200;
+        const too = foo();
+        too();
+        }
+
+        /**
+         * 자유변수 Free Variable
+         * - 함수 지역범위 밖에 선언된 변수
+         */
+        const say2 = "돈 좀 있니?"
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
         const hello = (name) => {
             const say = "안녕";
             console.log(`${say}, ${name}! ${say2}`);
         }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
         const test1 = () => {
             hello("철수");
         };
     </script>
+<<<<<<< HEAD
     <fieldset>
     <button onclick="test3();">전역카운터</button>
     <span id="globalCounterVal">0</span>
@@ -51,18 +75,35 @@
     <button onclick="test4();">클로져카운터</button>
     <span id="closureCounterVal">0</span>
 </fieldset>
+=======
+
+    <fieldset>
+        <button onclick="test3();">전역카운터</button>
+        <span id="globalCounterVal">0</span>
+        <br>
+        <button onclick="test4();">클로져카운터</button>
+        <span id="closureCounterVal">0</span>
+    </fieldset>
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
     <script>
         let gcnt = 0;
         const test3 = () => {
             gcnt++;
             globalCounterVal.innerHTML = gcnt;
+<<<<<<< HEAD
         }
         const counterMaker = () =>{
+=======
+        };
+
+        const counterMaker = () => {
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
             let cnt = 0;
             return () => {
                 cnt++;
                 closureCounterVal.innerHTML = cnt;
             }
+<<<<<<< HEAD
         }
         const test4 = counterMaker(); 
     </script>
@@ -74,9 +115,29 @@
     </fieldset>
     <script>
         const fontChanger = (fontSize) => () =>  document.body.style.fontSize = `${fontSize}px`;
+=======
+        };
+        const test4 = counterMaker();
+    </script>
+
+    <fieldset>
+        <legend>폰트크기변경</legend>
+        <button onclick="fontTo16();">16</button>
+        <button onclick="fontTo24();">24</button>
+        <button onclick="fontTo32();">32</button>
+    </fieldset>
+    <script>
+        const fontChanger = (fontSize) => () => document.body.style.fontSize = `${fontSize}px`;
+    
+
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
         const fontTo16 = fontChanger(16);
         const fontTo24 = fontChanger(24);
         const fontTo32 = fontChanger(32);
     </script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
 </body>
 </html>

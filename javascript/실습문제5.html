@@ -7,7 +7,11 @@
     <title>실습문제_closure</title>
 </head>
 <body>
+<<<<<<< HEAD
   <h4>@실습문제1 : 눈코딩</h4>
+=======
+    <h4>@실습문제1 : 눈코딩</h4>
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
 	<button onclick="aoo()();">aoo</button>
 	<button onclick="boo()();">boo1</button>
 	<button onclick="boo()(999);">boo2</button>
@@ -16,8 +20,13 @@
 	<script>
 	const a = 1;
 	const aoo = () => {
+<<<<<<< HEAD
 	const a = 100;
 	return () => console.log(a);
+=======
+        const a = 100;
+        return () => console.log(a);
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
 	}
 
 	const b = 9;
@@ -48,6 +57,7 @@
 	</fieldset>
 
 	<script>
+<<<<<<< HEAD
 	const mkAddFunc = () => {
         let sum = 0;
 		return () => {
@@ -58,6 +68,15 @@
             result.innerHTML = `${sum}`; 
             
         };
+=======
+
+	const mkAddFunc = () => {
+		let total = 0;
+		return () => {
+			total += parseInt(myadder.value);
+			result.innerHTML = total;
+		};
+>>>>>>> 773eef509df9d73f10f18250be17d810f8807ccd
 	};
 	const addFunc = mkAddFunc();
 
